@@ -1,6 +1,21 @@
-local colorscheme = "tokyonight-night"
+require('tokyonight').setup({
+  disable_background = true
+})
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  return
+
+require('rose-pine').setup({
+    disable_background = false,
+  	dark_variant = 'moon'
+})
+
+function ColorMyPencils(color) 
+	color = color or "rose-pine"
+	vim.cmd.colorscheme(color)
+
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
 end
+
+ColorMyPencils()
+

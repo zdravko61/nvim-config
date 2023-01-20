@@ -68,9 +68,15 @@ keymap('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 keymap('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 keymap('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 keymap('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-
+-- keymap('n', '<leader>/', function()
+--   -- You can pass additional configuration to telescope to change theme, layout, etc.
+--   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+--     winblend = 10,
+--     previewer = false,
+--   })
+-- end, { desc = '[/] Fuzzily search in current buffer]' })
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
